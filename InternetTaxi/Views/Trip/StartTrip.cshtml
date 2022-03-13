@@ -1,0 +1,60 @@
+﻿@model InternetTaxi.Models.TripModel
+
+@{
+    ViewData["Title"] = "StartTrip";
+}
+
+<h1>StartTrip</h1>
+
+<h4>TripModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="StartTrip" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="City" class="control-label"></label>
+                <input asp-for="City" class="form-control" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BegginAddress" class="control-label"></label>
+                <input asp-for="BegginAddress" class="form-control" />
+                <span asp-validation-for="BegginAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EndAddress" class="control-label"></label>
+                <input asp-for="EndAddress" class="form-control" />
+                <span asp-validation-for="EndAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PassengerId" class="control-label"></label>
+                <input asp-for="PassengerId" class="form-control" />
+                <span asp-validation-for="PassengerId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DriverId" class="control-label"></label>
+                <input asp-for="DriverId" class="form-control" />
+                <span asp-validation-for="DriverId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<br />
+<div class="row">
+
+    <form asp-action="EndTrip" method="get" class="col-xl-4 col-lg-6 col-md-12 mb-1">
+        <fieldset class="form-group">
+            <input type="text" name="Id">
+            <button class="btn btn-success">اتمام سفر</button>
+        </fieldset>
+    </form>
+</div>
+        @section Scripts {
+            @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        }
